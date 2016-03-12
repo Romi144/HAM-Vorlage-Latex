@@ -1,0 +1,40 @@
+\section{Einleitung}		   	% 
+Dies ist normaler Text....
+
+
+\label{referenzKey} 					   	% Einen Referenzpunkt setzen
+%											% 
+%% Text Styles								%
+\gqq{Anführungszeichen} 				\\ 	% 
+\textbf{Fettgedruckt}					\\ 	% 
+\textit{Kursiv}							\\ 	% 
+\underline{Unterstrichen}				\\ 	% 
+\\											% Zeilenumbruch
+%											%
+%% Text Elements							%
+\myboxquote{Dieser Text steht in einer Box} % Für längere Zitate geeignet
+\begin{itemize}								% Beginn einer Aufzählung
+	\item erster Punkt						% Aufzählungspunkt
+	\item Zweiter Punkt						% Aufzählungspunkt
+\end{itemize}								% Ende der Aufzählung
+
+%											% 
+%% Glossar									%
+\gls{BPM} 								\\ 	% Glossar eintrag
+\glspl{BPM} 							\\ 	% Plural des Glossar eintrags
+\gls{ASM} 								\\ 	% Wenn Glossar eintrag erstamlig verwendet wird
+\glspl{ASM} 							\\ 	% Wird die Bezeichnung ausgeschrieben, 
+%											% anschließend wir abgekürzt
+%											% 
+%% Quellen Referenzierung 					%
+Quellen verweise nach den Richtlinien der APA\\
+\citeA{BiBkey}. inline und am ende. \\
+\cite{BiBkey}
+%											% 
+%% Label Referenzierung 					%
+(siehe \mypageref{referenzKey})			\\ 	Referenz auf \label key mit Seitenangabe
+Abb. \ref{Ehrenamt}					\\	 Referenz auf \label ohne Seitenangabe
+%											%
+%% Weitere Hinweise
+Mehrmals Kompilieren hilft manchmal bei Problemen.\\
+Alles außer den Ordnern und der \{dateiname\}.tex aus dem Root-Verzeichnis löschen und mehrmals neu kompilieren löst hartnäckigere Fehler.
