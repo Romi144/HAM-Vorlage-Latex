@@ -4,30 +4,37 @@
 %Seiten und Kapitel einbinden
 \begin{document}
 	
-	%Titelblatt
-	\include{templates/01_titelblatt}
+	% front cover
+	\include{templates/titles/cover}
 	
-	% Verzeichnisse
-	\include{templates/20_verzeichnis_formatierung}
-	\include{templates/12_inhaltsverzeichnis}
-	\include{templates/13_abkuerzungsverzeichnis}
-	\include{templates/15_abbildungsverzeichnis}
-	\include{templates/16_tabellenverzeichnis}
-	\include{templates/17_listingsverzeichnis}
-	\include{chapters/00_abstract}
-	\include{accessories/glossaries}
-
-    % KAPITEL:
-    \include{templates/21_kapitel_formatierung}
-	\include{chapters/10_einleitung}
-	\include{chapters/11_kapitel}
+	% indexes
+	\include{templates/formattings/indexes}
+	\include{templates/indexes/table_of_contents}
+	\include{templates/indexes/abbreviations}
+	\include{templates/indexes/figures}
+	\include{templates/indexes/tables}
+	\include{templates/indexes/listings}
+	
+	% load definitions
+	\include{accessories/definitions/glossary}
+	
+    % abstract
+    \include{accessories/abstract}
+	
+    % chapters:
+    \include{templates/formattings/chapters}
+    
+	\include{chapters/einleitung}
+	\include{chapters/kapitel}
 	
 
-	% Abschluss
-	\include{templates/22_abschluss_formatierung}
-	\include{templates/18_literaturverzeichnis}
-	\include{templates/14_glossar}
-	\include{templates/19_index}
+	% closure
+	\include{templates/formattings/closure}
+	\include{templates/indexes/literature}
+	\include{templates/indexes/glossary}
+	\include{templates/indexes/index}
+	
+	% Appendix
 	\include{accessories/statutory_declaration}
     \include{accessories/appendix/index}
     

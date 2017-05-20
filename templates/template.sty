@@ -102,8 +102,7 @@
 \makenomenclature
 \makeglossaries
 
-% Festlegung der Art der Zitierung (Havardmethode: Abkuerzung Autor + Jahr) %
-\bibliographystyle{apacite}
+\usepackage{./templates/citation/citation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF-Optionen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{
@@ -124,23 +123,25 @@
 \fancyhead[R]{\thepage}                         % Kopfzeile rechts bzw. außen
 \renewcommand{\headrulewidth}{0.5pt}            % Kopfzeile rechts bzw. außen
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%% Layout und Beschriftungen %%%%%%%%%%%%%%%%%%%%%%%%%
 \onehalfspacing                % Zeilenabstand: 1.5 (Standard: 1.2)
 \setlist{noitemsep}            % Zeilenabstand für items auf 1 setzen
 
-\addto\captionsngerman{        % Tabllen- und ildungsunterschriften ändern
+\addto\captionsngerman{ % Tabllen- und ildungsunterschriften ändern
   \renewcommand{\figurename}{Abb.}
   \renewcommand{\tablename}{Tab.}
 }
-\numberwithin{table}{section}                               % Tabellennummerierung je Sektion zurücksetzen
-\numberwithin{figure}{section}                              % Abbildungsnummerierung je Sektion zurücksetzen
-\renewcommand{\thetable}{\arabic{section}.\arabic{table}}   % Tabellennummerierung mit Section
-\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}} % Abbildungsnummerierung mit Section
-\renewcommand{\thefootnote}{\arabic{footnote}}              % Sektionsbezeichnung von Fußnoten entfernen
+\numberwithin{table}{section}  % Tabellennummerierung je Sektion zurücksetzen
+\numberwithin{figure}{section}  % Abbildungsnummerierung je Sektion zurücksetzen
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}% Tabellennummerierung mit Section
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}% Abbildungsnummerierung mit Section
+\renewcommand{\thefootnote}{\arabic{footnote}} % Sektionsbezeichnung von Fußnoten entfernen
 
-\renewcommand{\multfootsep}{, }                             % Mehrere Fußnoten durch ", " trennen
+\renewcommand{\multfootsep}{, } % Mehrere Fußnoten durch ", " trennen
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Listingstyle %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Listings %%%%%%%%%%%%%%%%%%%%%%%%%
 \lstset{
 	basicstyle=\ttfamily\scriptsize,
 	commentstyle=\color{commentgray}\textit,
