@@ -3,46 +3,32 @@
 
 %Seiten und Kapitel einbinden
 \begin{document}
-	\pagenumbering{Roman}
-	% Das Titelblatt wird automatisch ausgewählt. Keine Änderung hier
-	\ifcase\myType
-		\include{templates/10_titel_seminar}
-	\or
-		\include{templates/10_titel_abschluss}
-	\else
-	\fi
-
-	\pagestyle{fancy}
+	
+	%Titelblatt
+	\include{templates/01_titelblatt}
+	
+	% Verzeichnisse
+	\include{templates/20_verzeichnis_formatierung}
 	\include{templates/12_inhaltsverzeichnis}
 	\include{templates/13_abkuerzungsverzeichnis}
 	\include{templates/15_abbildungsverzeichnis}
 	\include{templates/16_tabellenverzeichnis}
 	\include{templates/17_listingsverzeichnis}
-	\include{chapter/00_abstract}
+	\include{chapters/00_abstract}
+	\include{accessories/glossaries}
 
-	% Kapitel
-	\pagestyle{fancy}
-	\fancyhead[L]{\nouppercase{\leftmark}}                               % Kopfzeile links bzw. innen
-	\pagenumbering{arabic}
-
-	\include{accessories/glossaries}	% Glossar falls  benötigt
-
-
-	\include{chapter/10_einleitung}
-	\include{chapter/11_kapitel}
+    % KAPITEL:
+    \include{templates/21_kapitel_formatierung}
+	\include{chapters/10_einleitung}
+	\include{chapters/11_kapitel}
 	
-		% Anhang
-	\renewcommand{\thetable}{\Alph{section}.\arabic{table}}              % Tabellennummerierung mit Section
-	\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}            % Abbildungsnummerierung mit Section
-	\renewcommand{\thelstlisting}{\Alph{section}.\arabic{lstlisting}}    % Listingsnummerierung mit Section
-
-
 
 	% Abschluss
+	\include{templates/22_abschluss_formatierung}
 	\include{templates/18_literaturverzeichnis}
 	\include{templates/14_glossar}
 	\include{templates/19_index}
 	\include{accessories/statutory_declaration}
-
     \include{accessories/appendix/index}
+    
 \end{document}
