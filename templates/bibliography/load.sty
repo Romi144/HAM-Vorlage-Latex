@@ -1,0 +1,11 @@
+\ifcase\myCitationStyle
+	\usepackage{./templates/bibliography/citation_styles/apa}
+\or
+	\usepackage{./templates/bibliography/citation_styles/chicago}
+\or
+	\usepackage{./templates/bibliography/citation_styles/fham_custom}
+\else
+    \usepackage{./templates/bibliography/citation_styles/fham_custom}
+\fi
+
+\addbibresource{./accessories/literature/literature.bib}
