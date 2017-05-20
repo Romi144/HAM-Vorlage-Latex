@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt]{article}  
+\usepackage{styles}
+
+%Seiten und Kapitel einbinden
+\begin{document}
+	\pagenumbering{Roman}
+	% Das Titelblatt wird automatisch ausgewählt. Keine Änderung hier
+	\ifcase\myType
+		\include{pages/10_titel_seminar}
+	\or
+		\include{pages/10_titel_abschluss}
+	\else
+	\fi
+
+	\pagestyle{fancy}
+	\include{pages/12_inhaltsverzeichnis}
+	\include{pages/13_abkuerzungsverzeichnis}
+	\include{pages/15_abbildungsverzeichnis}
+	\include{pages/16_tabellenverzeichnis}
+	\include{pages/17_listingsverzeichnis}
+	\include{chapter/00_abstract}
+
+	% Kapitel
+	\pagestyle{fancy}
+	\fancyhead[L]{\nouppercase{\leftmark}}                               % Kopfzeile links bzw. innen
+	\pagenumbering{arabic}
+
+	\include{chapter/glossary_collection}	% Glossar falls  benötigt
+
+
+	\include{chapter/10_einleitung}
+	\include{chapter/11_kapitel}
+	
+		% Anhang
+	\renewcommand{\thetable}{\Alph{section}.\arabic{table}}              % Tabellennummerierung mit Section
+	\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}            % Abbildungsnummerierung mit Section
+	\renewcommand{\thelstlisting}{\Alph{section}.\arabic{lstlisting}}    % Listingsnummerierung mit Section
+
+
+
+	% Abschluss
+	\include{pages/18_literaturverzeichnis}
+	\include{pages/14_glossar}
+	\include{pages/19_index}
+	\include{pages/20_erklaerung}
+
+	%\begin{appendix}
+	%	\include{chapter/30_anhang}
+
+	%\end{appendix}
+\end{document}

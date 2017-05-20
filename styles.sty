@@ -1,34 +1,4 @@
-%%
-%%                   LaTeX Vorlage für die Studenten der
-%%              Fachhochschule für angewandtes Management
-%%
-%%  Die Vorlage orientiert sich an den Gestaltungsrichtlinien der Fachhochschule für angewandtes Management
-%%
-%%
-%% Ersteller:        Julian Beisenkötter
-%% letzten Änderung: 20. Januar 2016
-%% Version:			 1.0.0
-%%
-%%
-%% Wichtiger Hinweis zur Verwendung dieser Vorlage:
-%%
-%% Konfiguration für TeXstudio:
-%% Preferences/erzeugen/Benutzerbefehle:
-%% txs:///bibtex | txs:///makeindex "%.idx" -t "%.ilg" -o "%.ind" | txs:///makeindex -g -s "styles/stichwortverzeichnis.ist" % | txs:///makeindex "%.nlo" -s nomencl.ist -o "%.nls" | txs:///makeindex  -s "%.ist" -t "%.glg" -o "%.gls" "%.glo"
-%% mit Tools/benutzer/ keykompilieren.
-%%
-%% Wichtiger Hinweis:
-%%
-%% Keine Änderungen an den Dateien im Verzeichnis "pages" vornehmen. Für
-%% die Arbeit beziehen sich alle Änderungen auf diese Datei und die
-%% Dateien im Verzeichnis "chapter".
-%% Für die Erstellung des Literaturverzeichnises empfiehlt sich die Ver-
-%% wendung von JabRef (http://jabref.sourceforge.net).
-%% oder Mendeley (https://www.mendeley.com/).
-%% Die Datei ist unter dem Namen literatur.bib im Verzeichnis "literatur" zu speichern.
-%%
-
-\documentclass[a4paper,12pt]{article}                                         									   % Schriftgröße, Layout, Papierformat, Art des Dokumentes
+                                       									   % Schriftgröße, Layout, Papierformat, Art des Dokumentes
 \usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=1cm,includehead]{geometry}      % Einstellungen der Seitenränder
 \usepackage{ngerman}                                                          											% neue Rechtschreibung
 \usepackage[ngerman]{babel}                                                   										 % deutsche Silbentrennung
@@ -62,46 +32,6 @@
 \usepackage{multicol}
 \usepackage{apacite}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         %%
-%% \/   \/      Bitte hier die Änderungen zur Arbeit vornehmen     \/   \/ %%
-%%                                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%% Definitionen bzgl. der Arbeit %%%%%%%%%%%%%%%%%%%%%%%
-\def\myType{0}           % [0=Facharbeit | 1=Abschlussarbeit]
-
-%%%%%%%%%%%%%%%%%%%% Folgende Angaben für: Facharbeit %%%%%%%%%%%%%%%%%%%%
-\def\myModul{Empirische Forschung in Wissenschaft und Praxis}
-
-%%%%%%%%%%%%%%%%%%%% Folgende Angaben für: Abschlussarbeit %%%%%%%%%%%%%%%%%%%%
-\def\myProjectType{Masterarbeit} % [Bachelorarbeit | Masterbeit]
-
-%%%%%%%%%%%%%%%%%%%% Folgende Angaben für: Alle Arbeiten %%%%%%%%%%%%%%%%%%%%
-\def\myTopic{Auswirkungen von ehrenamtlichem Engagement auf das Persönlichkeitsinventar von jungen Erwachsenen}
-\def\mySubTopic{Untersuchung mittels NEO-Fünf-Faktoren-Inventar (NEO-FFI)}
-\def\myEndDate{21.03.2016}
-
-
-\def\myAutor{Romana Amelung}
-\def\myStreet{Seeburger Weg 14.}
-\def\myCity{13581 Berlin}
-\def\myMarikelnummer{46891}
-\def\myTel{+49 157 73559462}
-
-\def\mySemester{1}
-\def\mySemDate{Wintersemester 2015}
-\def \myCampus{Berlin}
-
-\def\myDozTitle{Professorin}
-\def\myDoz{Prof. Dr. Petra Schepler}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         %%
-%% /\   /\         Ab hier keine Änderungen mehr vornehmen         /\   /\ %%
-%%                                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%% Eigene Farbwerte definieren %%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{boxgray}{gray}{0.9}         % Hintergrundfarbe für Zitatboxen
@@ -165,6 +95,8 @@
 	\label{#2}
 }
 
+\usepackage{config}
+
 %%%%%%%%%%%%% Index, Abkürzungsverzeichnis und Glossar erstellen %%%%%%%%%%%%
 \makeindex
 \makenomenclature
@@ -181,7 +113,6 @@
 	pdftitle=\myTopic,
 	pdfsubject=\myTopic,
 	pdfauthor=\myAutor,
-	pdfborder=0,
 	pdfstartview=Fit,
 	pdfpagelayout=SinglePage
 }
@@ -230,76 +161,3 @@
 	aboveskip=16pt
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         %%
-%% \/   \/      Bitte hier nur bei Bedarf Änderungen vornehmen     \/   \/ %%
-%%                                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Seiten und Kapitel einbinden
-\begin{document}
-	\pagenumbering{Roman}
-	% Das Titelblatt wird automatisch ausgewählt. Keine Änderung hier
-	\ifcase\myType
-		\include{pages/10_titel_seminar}
-	\or
-		\include{pages/10_titel_abschluss}
-	\else
-	\fi
-
-	\pagestyle{fancy}
-	\include{pages/12_inhaltsverzeichnis}
-	\include{pages/13_abkuerzungsverzeichnis}
-	\include{pages/15_abbildungsverzeichnis}
-	\include{pages/16_tabellenverzeichnis}
-	\include{pages/17_listingsverzeichnis}
-	\include{chapter/00_abstract}
-
-	% Kapitel
-	\pagestyle{fancy}
-	\fancyhead[L]{\nouppercase{\leftmark}}                               % Kopfzeile links bzw. innen
-	\pagenumbering{arabic}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         %%
-%% \/   \/      Bitte hier die Änderungen zur Arbeit vornehmen     \/   \/ %%
-%%                                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	\include{chapter/glossary_collection}	% Glossar falls  benötigt
-
-
-	\include{chapter/10_einleitung}
-	\include{chapter/11_kapitel}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         %%
-%% /\   /\    Bis hier die Änderungen zur Arbeit vornehmen         /\   /\ %%
-%%                                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	% Anhang
-	\renewcommand{\thetable}{\Alph{section}.\arabic{table}}              % Tabellennummerierung mit Section
-	\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}            % Abbildungsnummerierung mit Section
-	\renewcommand{\thelstlisting}{\Alph{section}.\arabic{lstlisting}}    % Listingsnummerierung mit Section
-
-
-
-	% Abschluss
-	\include{pages/18_literaturverzeichnis}
-	\include{pages/14_glossar}
-	\include{pages/19_index}
-	\include{pages/20_erklaerung}
-
-	%\begin{appendix}
-	%	\include{chapter/30_anhang}
-
-	%\end{appendix}
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                         								  %%
-%% /\   /\         Ab hier keine Änderungen mehr vornehmen         /\   /\ %%
-%%                                                                        								  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
