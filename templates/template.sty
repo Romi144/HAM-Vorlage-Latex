@@ -1,4 +1,4 @@
-                                       									   % Schriftgröße, Layout, Papierformat, Art des Dokumentes
+ % Schriftgröße, Layout, Papierformat, Art des Dokumentes
 \usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=1cm,includehead]{geometry}      % Einstellungen der Seitenränder
 \usepackage{ngerman}                                                          											% neue Rechtschreibung
 \usepackage[ngerman]{babel}                                                   										 % deutsche Silbentrennung
@@ -95,7 +95,7 @@
 	\label{#2}
 }
 
-\usepackage{config}
+\usepackage{./accessories/main_config}
 
 %%%%%%%%%%%%% Index, Abkürzungsverzeichnis und Glossar erstellen %%%%%%%%%%%%
 \makeindex
@@ -120,6 +120,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopf- und Fußzeile %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 \fancyhf{}
+\setlength{\headheight}{14.5pt}
 \fancyhead[R]{\thepage}                         % Kopfzeile rechts bzw. außen
 \renewcommand{\headrulewidth}{0.5pt}            % Kopfzeile rechts bzw. außen
 

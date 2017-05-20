@@ -1,23 +1,23 @@
 \documentclass[a4paper,12pt]{article}  
-\usepackage{styles}
+\usepackage{templates/template}
 
 %Seiten und Kapitel einbinden
 \begin{document}
 	\pagenumbering{Roman}
 	% Das Titelblatt wird automatisch ausgewählt. Keine Änderung hier
 	\ifcase\myType
-		\include{pages/10_titel_seminar}
+		\include{templates/10_titel_seminar}
 	\or
-		\include{pages/10_titel_abschluss}
+		\include{templates/10_titel_abschluss}
 	\else
 	\fi
 
 	\pagestyle{fancy}
-	\include{pages/12_inhaltsverzeichnis}
-	\include{pages/13_abkuerzungsverzeichnis}
-	\include{pages/15_abbildungsverzeichnis}
-	\include{pages/16_tabellenverzeichnis}
-	\include{pages/17_listingsverzeichnis}
+	\include{templates/12_inhaltsverzeichnis}
+	\include{templates/13_abkuerzungsverzeichnis}
+	\include{templates/15_abbildungsverzeichnis}
+	\include{templates/16_tabellenverzeichnis}
+	\include{templates/17_listingsverzeichnis}
 	\include{chapter/00_abstract}
 
 	% Kapitel
@@ -25,7 +25,7 @@
 	\fancyhead[L]{\nouppercase{\leftmark}}                               % Kopfzeile links bzw. innen
 	\pagenumbering{arabic}
 
-	\include{chapter/glossary_collection}	% Glossar falls  benötigt
+	\include{accessories/glossaries}	% Glossar falls  benötigt
 
 
 	\include{chapter/10_einleitung}
@@ -39,13 +39,10 @@
 
 
 	% Abschluss
-	\include{pages/18_literaturverzeichnis}
-	\include{pages/14_glossar}
-	\include{pages/19_index}
-	\include{pages/20_erklaerung}
+	\include{templates/18_literaturverzeichnis}
+	\include{templates/14_glossar}
+	\include{templates/19_index}
+	\include{accessories/statutory_declaration}
 
-	%\begin{appendix}
-	%	\include{chapter/30_anhang}
-
-	%\end{appendix}
+    \include{accessories/appendix/index}
 \end{document}
